@@ -1,6 +1,5 @@
 # gcepachecoandroidchallenge
 Android Technical Challenge - Emmanuel Pacheco
-
 ====================
 ▪ El proyecto a crear será almacenado en el repositorio, puedes hacer uno o varios 
 commits en el transcurso del desarrollo del examen. 
