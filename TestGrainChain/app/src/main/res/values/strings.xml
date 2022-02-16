@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TestGrainChain</string>
+    <string name="title_activity_list">Lista de rutas</string>
+    <string name="start_tracking_route">Inicio de ruta</string>
+    <string name="end_tracking_route">Final de ruta</string>
+    <string name="start_tracking">Grabar ruta</string>
+    <string name="stop_tracking">Detener tracking</string>
+    <string name="nombre_del_corrido">Nombre del corrido</string>
+    <string name="save_route">Guardar</string>
+    <string name="title_dialog">Dale un nombre a tu recorrido</string>
+    <string name="msg_dialog_name_route">Ingresa un nombre</string>
+    <string name="msg_route_saved">Recorrido guardado</string>
+    <string name="u2022">\u2022</string>
+    <string name="msg_delete_location">Registro Borrado</string>
+    <string name="message_permission_location">Para una mejor experiencia es necesario que permitas el acceso a tu ubicación</string>
+    <string name="msg_obtain_location_permissions">Obteniendo ubicación</string>
+    <string name="btn_delete_location">Borrar Registro</string>
+    <string name="title_end_date">Fecha de termino</string>
+    <string name="title_start_date">Fecha de inicio</string>
+
+</resources>

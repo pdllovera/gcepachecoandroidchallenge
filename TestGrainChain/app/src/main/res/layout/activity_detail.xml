@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="location"
+            type="com.dalvik.testgrainchain.entities.Locations" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        tools:context=".view.DetailActivity">
+
+        <fragment
+            android:id="@+id/mapDetail"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:cameraZoom="13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liteMode="true"
+            app:mapType="normal" />
+
+        <TextView
+            android:id="@+id/tv_titleTimeStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:includeFontPadding="false"
+            android:text="@string/title_start_date"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapDetail" />
+
+        <TextView
+            android:id="@+id/tv_TimeStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:includeFontPadding="false"
+            android:padding="20dp"
+            android:text="@{location.formatTimeStart()}"
+            android:textColor="@color/marks"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleTimeStart" />
+
+        <TextView
+            android:id="@+id/tv_titleTimeEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:includeFontPadding="false"
+            android:text="@string/title_end_date"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_TimeStart" />
+
+
+        <TextView
+            android:id="@+id/tv_TimeEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:includeFontPadding="false"
+            android:padding="20dp"
+            android:text="@{location.formatTimeEnd()}"
+            android:textColor="@color/marks"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleTimeEnd" />
+
+        <LinearLayout
+            android:id="@+id/layoutMisc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/mapDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_TimeEnd">
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_star"
+                app:tint="@color/marks" />
+
+            <TextView
+                android:id="@+id/tv_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:text="@{location.distanceConverter}"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:text="@string/u2022"
+                android:textColor="@color/icons"
+                android:textSize="40sp" />
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_time"
+                app:tint="@color/marks" />
+
+            <TextView
+                android:id="@+id/textGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:text="@{location.formatEndTime}"
+
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDeleteLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/btn_delete_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

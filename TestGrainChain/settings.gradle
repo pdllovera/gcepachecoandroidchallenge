@@ -1,0 +1,2 @@
+rootProject.name = "TestGrainChain"
+include ':app'
